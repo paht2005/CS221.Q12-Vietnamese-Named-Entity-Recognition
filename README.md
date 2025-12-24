@@ -99,16 +99,13 @@ CS221.Q12-Vietnamese-Named-Entity-Recognition/
 │   └── train_BiLSTM-CRF.ipynb     # Training notebook for BiLSTM-CRF model
 │
 ├── slide/
-│   ├── style.css                  # CSS styles for Flask web demo
-│   └── script.js                  # JavaScript logic for UI interactions
-│
-├── 
-│                   
-├── static/
 │   ├── figs/                 # Figures used in report and slides
 |          ├── *.jpg                     
 │          └── *.png   
-│   └── main.tex                 # Latex file
+│   └── main.tex                 # Latex file               
+├── static/
+│   ├── style.css                  # CSS styles for Flask web demo
+│   └── script.js                  # JavaScript logic for UI interactions
 │
 ├── templates/
 │   └── index.html                 # Main HTML template for Flask app
