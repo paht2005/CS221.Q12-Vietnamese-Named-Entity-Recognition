@@ -13,7 +13,9 @@
 > The project focuses on **sequence labeling** for Vietnamese text using three classical and neural approaches: **Hidden Markov Model (HMM)**, **Conditional Random Fields (CRF)**, and **BiLSTM-CRF**.  
 >  
 > In addition to model training and evaluation, we also provide a **Flask-based interactive demo** that allows users to switch between CRF and BiLSTM-CRF models and visualize prediction results.
-
+<p align="center">
+  <img src="outputs/demo.png" alt="Vietnamese NER Demo" width="900">
+</p>
 ---
 
 ## Team Information
@@ -74,36 +76,36 @@
 CS221.Q12-Vietnamese-Named-Entity-Recognition/
 │
 ├── dataset/
-│ ├── train.txt
-│ └── test.txt
+│   ├── train.txt                  # Training data (VLSP 2016 format)
+│   └── test.txt                   # Test data (VLSP 2016 format)
 │
 ├── figs/
-│ └── *.png # Figures used in report and slides
+│   └── *.png                      # Figures used in report and slides
 │
 ├── models/
-│ ├── crf_best.joblib
-│ └── bilstm_crf_best.pt
+│   ├── crf_best.joblib            # Best CRF model (sklearn-crfsuite)
+│   └── bilstm_crf_best.pt         # Best BiLSTM-CRF model (PyTorch)
 │
 ├── outputs/
-│ ├── CRF_test_report.txt
-│ ├── CRF_valid_report.txt
-│ ├── bilstm_valid_report_best.txt
-│ ├── bilstm_test_report.txt
-│ └── demo.png # Screenshot of Flask demo
+│   ├── CRF_test_report.txt        # CRF evaluation results on test set
+│   ├── CRF_valid_report.txt       # CRF evaluation results on validation set
+│   ├── bilstm_valid_report_best.txt# Best BiLSTM-CRF validation report
+│   ├── bilstm_test_report.txt     # BiLSTM-CRF evaluation results on test set
+│   └── demo.png                   # Screenshot of Flask demo interface
 │
 ├── src/
-│ ├── train_HMM.ipynb
-│ ├── train_CRF.ipynb
-│ └── train_BiLSTM-CRF.ipynb
+│   ├── train_HMM.ipynb            # Training notebook for HMM model
+│   ├── train_CRF.ipynb            # Training notebook for CRF model
+│   └── train_BiLSTM-CRF.ipynb     # Training notebook for BiLSTM-CRF model
 │
 ├── static/
-│ ├── style.css
-│ └── script.js
+│   ├── style.css                  # CSS styles for Flask web demo
+│   └── script.js                  # JavaScript logic for UI interactions
 │
 ├── templates/
-│ └── index.html
+│   └── index.html                 # Main HTML template for Flask app
 │
-├── app.py # Flask application
-├── requirements.txt # Python dependencies
-├── CS221_Slides.pdf # Presentation slides
-└── README.md
+├── app.py                         # Flask application entry point
+├── requirements.txt               # Python dependencies
+├── CS221_Slides.pdf               # Presentation slides
+└── README.md                      # Project documentation
