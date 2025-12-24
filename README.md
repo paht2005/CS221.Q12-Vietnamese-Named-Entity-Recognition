@@ -180,6 +180,74 @@ python app.py
 ```
 Open browser at:
 ```bash
-http:*//127.0.0.1:5000*
+http://127.0.0.1:5000
 
 ```
+
+---
+## Results
+
+### Overall Model Performance (Test Set)
+
+The table below summarizes the performance of all three models on the **TEST set**.  
+Multiple evaluation metrics are reported to reflect both token-level and entity-level quality.
+
+| Metric | HMM | CRF | BiLSTM-CRF |
+|------|-----|-----|------------|
+| Accuracy | 0.97 | **0.9904** | 0.9851 |
+| Token F1 (ALL, incl. O) | 0.98 | **0.9901** | 0.9843 |
+| Token F1 (Non-O only) | – | **0.9076** | 0.8642 |
+| Macro F1 (Token-level) | **0.72** | 0.8875 | 0.8535 |
+| Span F1 (Entity-level) | – | **0.9191** | 0.8834 |
+
+> **Note:**  
+> - HMM reports Accuracy and Macro-F1 only.  
+> - CRF and BiLSTM-CRF additionally report **Non-O F1** and **Span F1**, which better reflect real NER performance.
+
+---
+
+### Comparison Summary
+
+- **HMM**  
+  - Serves as a baseline model.  
+  - Macro-F1 improved significantly after optimization (**0.51 → 0.72**).  
+  - Still limited due to the Markov assumption and lack of global context.
+
+- **CRF**  
+  - Achieves the **best overall performance** on the test set.  
+  - Strong feature engineering and sequence-level constraints make it highly effective for the current dataset.  
+  - Best scores in **Accuracy, Non-O F1, and Span F1**.
+
+- **BiLSTM-CRF**  
+  - Outperforms HMM and is competitive with CRF.  
+  - Slightly lower than CRF due to limited data size and lack of pretrained embeddings.  
+  - Expected to scale better with larger datasets and richer embeddings.
+
+---
+
+### Metric Interpretation
+
+- **Token F1 (ALL)**  
+  Includes the `O` tag. This score can be misleadingly high because non-entity tokens dominate the dataset.
+
+- **Token F1 (Non-O)**  
+  Evaluates only entity tokens, providing a more realistic measure of NER quality.
+
+- **Span F1 (Entity-level)**  
+  Measures exact entity span matching. This is the **strictest and most meaningful** metric for NER tasks.
+
+---
+
+## Demo
+
+A Flask-based interactive demo is provided to visualize model predictions.
+
+The demo supports:
+- Switching between **CRF** and **BiLSTM-CRF**
+- Highlighting predicted named entities in the input sentence
+- Displaying token-level predictions and model metrics
+
+A screenshot of the demo interface is available at:
+
+```text
+outputs/demo.png
