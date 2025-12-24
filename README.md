@@ -166,4 +166,4 @@ pip install -r requirements.txt
 
 ## Usage
 ### 1. Train models
-Open and run notebooks in 'src/':
+Open and run notebooks in *src/*:
