@@ -24,7 +24,7 @@
 |----:|:----------:|-----------|------|--------|-------|
 | 1 | 23521143 | Nguyen Cong Phat | Leader | [paht2005](https://github.com/paht2005) | 23521143@gm.uit.edu.vn |
 | 2 | 23521168 | Nguyen Le Phong | Member | [kllp031](https://github.com/kllp031) | 23521168@gm.uit.edu.vn  |
-| 3 | 23520384 | Pham Tran Khanh Duy | Member |  |  23520384@gm.uit.edu.vn  | 
+| 3 | 23520384 | Pham Tran Khanh Duy | Member | [PhDuy2005](https://github.com/PhDuy2005/) |  23520384@gm.uit.edu.vn  | 
 
 
 ---
