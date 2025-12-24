@@ -20,9 +20,9 @@
 | No. | Student ID | Full Name | Role | Github | Email |
 |----:|:----------:|-----------|------|--------|-------|
 | 1 | 23521143 | Nguyen Cong Phat | Leader | [paht2005](https://github.com/paht2005) | 23521143@gm.uit.edu.vn |
-| 2 | 23521xxx | (Member) | Member |  |  |
-| 3 | 23521xxx | (Member) | Member |  |  |
-| 4 | 23521xxx | (Member) | Member |  |  |
+| 2 | 23521168 | Nguyen Le Phong | Member | [kllp031](https://github.com/kllp031) | 23521168@gm.uit.edu.vn  |
+| 3 | 23520384 | Pham Tran Khanh Duy | Member |  |  23520384@gm.uit.edu.vn  | 
+
 
 ---
 
