@@ -82,6 +82,7 @@ CS221.Q12-Vietnamese-Named-Entity-Recognition/
 │   └── test.txt                   # Test data (VLSP 2016 format)
 │
 ├── figs/
+│   ├── *.jpg                      # Figures used in report and slides
 │   └── *.png                      # Figures used in report and slides
 │
 ├── models/
