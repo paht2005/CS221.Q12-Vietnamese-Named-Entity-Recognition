@@ -1,0 +1,41 @@
+# ===============================
+# Core
+# ===============================
+numpy>=1.23
+joblib>=1.2
+
+# ===============================
+# Flask demo
+# ===============================
+Flask>=2.3
+Jinja2>=3.1
+
+# ===============================
+# Traditional ML (HMM/CRF eval, metrics)
+# ===============================
+scikit-learn>=1.2
+
+# ===============================
+# CRF (sklearn-crfsuite)
+# ===============================
+sklearn-crfsuite==0.3.6
+# python-crfsuite is a dependency of sklearn-crfsuite; keep explicit for stability on some envs
+python-crfsuite>=0.9.9
+
+# ===============================
+# BiLSTM-CRF (PyTorch)
+# ===============================
+torch>=2.0
+# pip name: pytorch-crf ; import name: torchcrf (dung voi notebook/app.py)
+pytorch-crf>=0.7.2
+
+# ===============================
+# Visualization (notebooks)
+# ===============================
+matplotlib>=3.7
+
+# ===============================
+# Notebook runtime (neu chay .ipynb local/Colab)
+# ===============================
+notebook>=7.0
+ipykernel>=6.29

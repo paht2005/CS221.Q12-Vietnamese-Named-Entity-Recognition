@@ -1,0 +1,146 @@
+==========================================================================================
+CRF - VALID REPORT
+==========================================================================================
+[Token] Weighted F1 (ALL incl O): 0.9904
+              precision    recall  f1-score   support
+
+       B-LOC     0.8977    0.8977    0.8977       479
+      B-MISC     0.9474    0.9474    0.9474        19
+       B-ORG     0.8182    0.6300    0.7119       100
+       B-PER     0.9599    0.9386    0.9491       586
+       I-LOC     0.8429    0.8719    0.8571       203
+      I-MISC     0.9474    0.9474    0.9474        19
+       I-ORG     0.7097    0.7051    0.7074       156
+       I-PER     0.9706    0.9199    0.9445       287
+           O     0.9963    0.9979    0.9971     27137
+
+    accuracy                         0.9905     28986
+   macro avg     0.8989    0.8729    0.8844     28986
+weighted avg     0.9904    0.9905    0.9904     28986
+
+[Token] Weighted F1 (Non-O only): 0.9046
+              precision    recall  f1-score   support
+
+       B-LOC     0.9208    0.8977    0.9091       479
+      B-MISC     0.9474    0.9474    0.9474        19
+       B-ORG     0.9403    0.6300    0.7545       100
+       B-PER     0.9700    0.9386    0.9540       586
+       I-LOC     0.8719    0.8719    0.8719       203
+      I-MISC     0.9474    0.9474    0.9474        19
+       I-ORG     0.8029    0.7051    0.7509       156
+       I-PER     0.9814    0.9199    0.9496       287
+
+   micro avg     0.9325    0.8816    0.9063      1849
+   macro avg     0.9228    0.8572    0.8856      1849
+weighted avg     0.9321    0.8816    0.9046      1849
+
+[Span] P=0.9145 R=0.8770 F1=0.8953 | TP=278 FP=26 FN=39
+
+Top confusions:
+I-ORG -> O : 26
+B-LOC -> O : 21
+B-PER -> O : 20
+B-ORG -> O : 19
+O -> I-ORG : 18
+B-LOC -> I-LOC : 14
+O -> B-LOC : 12
+I-LOC -> B-LOC : 11
+O -> B-ORG : 10
+B-PER -> B-LOC : 10
+B-LOC -> B-PER : 9
+I-PER -> I-ORG : 8
+I-ORG -> B-LOC : 8
+B-ORG -> I-ORG : 7
+B-ORG -> B-LOC : 7
+I-LOC -> O : 7
+O -> I-LOC : 7
+I-ORG -> I-LOC : 7
+O -> B-PER : 6
+I-PER -> O : 6
+
+Worst cases:
+idx=899 nonO_errors=14
+✗ Nhuận_Đức            gold=B-LOC      pred=O         
+✗ bót                  gold=B-LOC      pred=O         
+✗ An_Nhơn_Tây          gold=I-LOC      pred=B-LOC     
+✗ bót                  gold=B-LOC      pred=O         
+✗ Trung_Hoà            gold=I-LOC      pred=B-LOC     
+✗ bót                  gold=B-LOC      pred=O         
+✗ Phú_Hoà_Đông         gold=I-LOC      pred=B-LOC     
+✗ bót                  gold=B-LOC      pred=O         
+✗ cầu                  gold=I-LOC      pred=B-LOC     
+✓ Bến_Mương            gold=I-LOC      pred=I-LOC     
+✓ huyện_lỵ             gold=B-LOC      pred=B-LOC     
+✓ Củ_Chi               gold=I-LOC      pred=I-LOC     
+✗ căn_cứ               gold=B-LOC      pred=O         
+✗ Đồng_Dù              gold=I-LOC      pred=B-LOC     
+✗ sư_đoàn              gold=B-ORG      pred=O         
+✗ dù                   gold=I-ORG      pred=O         
+✗ 25                   gold=I-ORG      pred=O         
+✓ Mỹ                   gold=B-LOC      pred=B-LOC     
+
+idx=1236 nonO_errors=9
+✓ Bộ                   gold=B-ORG      pred=B-ORG     
+✓ Chính_trị            gold=I-ORG      pred=I-ORG     
+✓ người                gold=B-MISC     pred=B-MISC    
+✓ VN                   gold=I-MISC     pred=I-MISC    
+✓ Bộ                   gold=B-ORG      pred=B-ORG     
+✓ Ngoại_giao           gold=I-ORG      pred=I-ORG     
+✗ Nguyễn               gold=B-PER      pred=I-ORG     
+✗ Phú                  gold=I-PER      pred=I-ORG     
+✗ Bình                 gold=I-PER      pred=B-PER     
+✗ Uỷ_ban               gold=B-ORG      pred=O         
+✗ về                   gold=I-ORG      pred=O         
+✗ người                gold=I-ORG      pred=B-MISC    
+✗ VN                   gold=I-ORG      pred=I-MISC    
+✗ ở                    gold=I-ORG      pred=O         
+✗ nước_ngoài           gold=I-ORG      pred=O         
+✓ Tuổi_Trẻ             gold=B-ORG      pred=B-ORG     
+✓ Hà_Nội               gold=B-LOC      pred=B-LOC     
+
+idx=1022 nonO_errors=8
+✗ UBND                 gold=B-ORG      pred=O         
+✗ tỉnh                 gold=I-ORG      pred=B-LOC     
+✗ Lâm_Đồng             gold=I-ORG      pred=I-LOC     
+✓ Dankia               gold=B-LOC      pred=B-LOC     
+✗ -                    gold=O          pred=I-LOC     
+✗ Suối                 gold=B-LOC      pred=I-LOC     
+✓ Vàng                 gold=I-LOC      pred=I-LOC     
+✓ Dankia               gold=B-LOC      pred=B-LOC     
+✗ -                    gold=O          pred=I-LOC     
+✗ Suối                 gold=B-LOC      pred=I-LOC     
+✗ Vàng                 gold=B-LOC      pred=I-LOC     
+
+idx=840 nonO_errors=8
+✓ sư_đoàn              gold=B-ORG      pred=B-ORG     
+✓ 1                    gold=I-ORG      pred=I-ORG     
+✗ bộ_binh              gold=O          pred=I-ORG     
+✗ "                    gold=O          pred=I-ORG     
+✗ Anh                  gold=B-ORG      pred=I-ORG     
+✓ Cả_Đỏ                gold=I-ORG      pred=I-ORG     
+✗ Crimp                gold=O          pred=B-PER     
+✗ Bộ_tư_lệnh           gold=B-ORG      pred=O         
+✗ Quân_khu             gold=I-ORG      pred=B-ORG     
+✓ Sài_Gòn              gold=I-ORG      pred=I-ORG     
+✓ -                    gold=I-ORG      pred=I-ORG     
+✓ Chợ_Lớn              gold=I-ORG      pred=I-ORG     
+✓ địa_đạo              gold=B-LOC      pred=B-LOC     
+✓ Bến                  gold=I-LOC      pred=I-LOC     
+✓ Dược                 gold=I-LOC      pred=I-LOC     
+✗ Huyện_uỷ             gold=B-LOC      pred=B-ORG     
+✗ Củ_Chi               gold=I-LOC      pred=I-ORG     
+✓ địa_đạo              gold=B-LOC      pred=B-LOC     
+✓ Bến                  gold=I-LOC      pred=I-LOC     
+✓ Đình                 gold=I-LOC      pred=I-LOC     
+
+idx=1111 nonO_errors=7
+✗ thành                gold=O          pred=B-LOC     
+✗ cổ                   gold=O          pred=I-LOC     
+✗ Quảng_Trị            gold=B-LOC      pred=I-LOC     
+✓ Nguyễn               gold=B-PER      pred=B-PER     
+✓ Văn                  gold=I-PER      pred=I-PER     
+✓ Thạc                 gold=I-PER      pred=I-PER     
+✗ trung_đoàn           gold=B-ORG      pred=O         
+✗ 101                  gold=I-ORG      pred=O         
+✗ sư_đoàn              gold=B-ORG      pred=O         
+✗ 325                  gold=I-ORG      pred=O         

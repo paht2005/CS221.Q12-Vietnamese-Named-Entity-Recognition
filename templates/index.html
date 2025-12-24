@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vietnamese NER Demo (CRF / BiLSTM-CRF)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <h1>Vietnamese NER Demo</h1>
+        <p class="subtitle">Switch nhanh giữa <b>CRF</b> và <b>BiLSTM-CRF</b> (Flask).</p>
+      </div>
+      <div class="status">
+        <div class="pill {{ 'ok' if available.get('crf') else 'bad' }}">CRF: {{ 'READY' if available.get('crf') else 'NOT LOADED' }}</div>
+        <div class="pill {{ 'ok' if available.get('bilstm_crf') else 'bad' }}">BiLSTM-CRF: {{ 'READY' if available.get('bilstm_crf') else 'NOT LOADED' }}</div>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <label class="label">Chọn mô hình</label>
+        <select id="modelSelect" class="select">
+          <option value="crf">CRF</option>
+          <option value="bilstm_crf">BiLSTM-CRF</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label class="label">Nhập câu tiếng Việt</label>
+        <textarea id="inputText" class="textarea" rows="5" placeholder="VD: Nguyễn Công Phát học tại Trường Đại học Công nghệ Thông tin ở TP.HCM."></textarea>
+      </div>
+
+      <div class="actions">
+        <button id="btnPredict" class="btn primary">Predict</button>
+        <button id="btnExample" class="btn">Ví dụ</button>
+        <button id="btnClear" class="btn ghost">Xoá</button>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Kết quả (highlight entity)</h2>
+        <div id="renderBox" class="renderBox"></div>
+      </div>
+      <div class="card">
+        <h2>Model metrics</h2>
+        <div id="metricsBox" class="metricsBox">
+          <div class="muted">Chọn mô hình để xem metrics.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Tokens / Tags</h2>
+        <div id="tableBox" class="tableBox"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Tip: để demo giống training nhất, nhớ dùng đúng tokenizer/word-segmentation giống lúc train.
+      </p>
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
