@@ -253,3 +253,25 @@ outputs/demo.png
 <p align="center">
   <img src="outputs/demo.png" alt="Vietnamese NER Demo" width="900">
 </p>
+
+---
+## Conclusion
+- This project demonstrates:
+  - The effectiveness of **CRF and neural sequence labeling models** for Vietnamese NER.
+  - Clear performance gains of **CRF and BiLSTM-CRF** over traditional HMM.
+  - The importance of **Non-O F1** and **Span F1** over raw token accuracy.
+  - A complete NLP pipeline from **data preprocessing → model training → evaluation → deployment**.
+
+- This project demonstrates:
+  - Pretrained word embeddings
+  - Transformer-based architectures
+  - Domain-specific Vietnamese NER applications
+ 
+---
+## License
+This project is for **academic use** in the course **CS221.Q12 - Natural Language Processing** at the University of Information Technology (UIT – VNU-HCM).
+
+All rights reserved for educational purposes.
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
