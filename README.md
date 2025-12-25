@@ -14,7 +14,9 @@
 >  
 > In addition to model training and evaluation, we also provide a **Flask-based interactive demo** that allows users to switch between CRF and BiLSTM-CRF models and visualize prediction results.
 
-
+<p align="center">
+  <img src="thumbnail.png" alt="Thumbnail" width="900">
+</p>
 ---
 
 ## Team Information
