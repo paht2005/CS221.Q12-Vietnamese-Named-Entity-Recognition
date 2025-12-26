@@ -133,35 +133,58 @@ class CRFPredictor(PredictorBase):
 
     def featurize(self, tokens: List[str]) -> Any:
         # --- Option A: you saved a feature_extractor in the bundle ---
-        fx = self.bundle.get("feature_extractor", None)
+        fx = None
+        if isinstance(self.bundle, dict):
+            fx = self.bundle.get("feature_extractor", None)
         if fx is not None:
             # Many CRF libs expect list of dict features per token
             return fx(tokens)
 
-        # --- Option B (fallback): minimal features ---
-        # WARNING: This likely won't match your training features.
-        # Replace with your own `sent2features` from notebook.
+        # --- Option B (fallback): use the same features as training ---
+        # Based on sent2features from train_CRF.ipynb
         feats = []
-        for i, w in enumerate(tokens):
-            feats.append({
-                "w": w,
-                "lower": w.lower(),
-                "is_upper": w.isupper(),
-                "is_title": w.istitle(),
-                "is_digit": w.isdigit(),
-                "prefix1": w[:1],
-                "prefix2": w[:2],
-                "suffix1": w[-1:],
-                "suffix2": w[-2:],
+        for i in range(len(tokens)):
+            w = tokens[i]
+            f = {
                 "bias": 1.0,
-                "i": i,
-            })
+                "w.lower": w.lower(),
+                "w.isupper": w.isupper(),
+                "w.istitle": w.istitle(),
+                "w.isdigit": w.isdigit(),
+                "w.len": len(w),
+                "pref2": w[:2].lower(),
+                "pref3": w[:3].lower(),
+                "suf2": w[-2:].lower(),
+                "suf3": w[-3:].lower(),
+                "has_hyphen": "-" in w
+            }
+            # Previous word features
+            if i > 0:
+                wp = tokens[i-1]
+                f["-1:w.lower"] = wp.lower()
+                f["-1:w.istitle"] = wp.istitle()
+            else:
+                f["BOS"] = True
+
+            # Next word features
+            if i < len(tokens) - 1:
+                wn = tokens[i+1]
+                f["+1:w.lower"] = wn.lower()
+                f["+1:w.istitle"] = wn.istitle()
+            else:
+                f["EOS"] = True
+            
+            feats.append(f)
         return feats
 
     def predict(self, tokens: List[str]) -> List[str]:
-        model = self.bundle.get("model", None)
-        if model is None:
-            # maybe bundle itself is the model
+        # Check if bundle is a dict or the model itself
+        if isinstance(self.bundle, dict):
+            model = self.bundle.get("model", None)
+            if model is None:
+                model = self.bundle
+        else:
+            # bundle is the model itself
             model = self.bundle
 
         X = self.featurize(tokens)
