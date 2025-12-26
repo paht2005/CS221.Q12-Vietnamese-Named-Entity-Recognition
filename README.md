@@ -94,7 +94,7 @@ CS221.Q12-Vietnamese-Named-Entity-Recognition/
 │   ├── CRF_valid_report.txt       # CRF evaluation results on validation set
 │   ├── bilstm_valid_report_best.txt# Best BiLSTM-CRF validation report
 │   ├── bilstm_test_report.txt     # BiLSTM-CRF evaluation results on test set
-│   └── demo.png                   # Screenshot of Flask demo interface
+│   
 │
 ├── src/
 │   ├── train_HMM.ipynb            # Training notebook for HMM model
@@ -118,7 +118,9 @@ CS221.Q12-Vietnamese-Named-Entity-Recognition/
 ├── app.py                         # Flask application entry point
 ├── requirements.txt               # Python dependencies
 ├── CS221_Slides.pdf               # Presentation slides
+├── demo.gif                   # GIF of Flask demo interface
 └── README.md                      # Project documentation
+
 ```
 
 ---
@@ -248,10 +250,10 @@ The demo supports:
 A screenshot of the demo interface is available at:
 
 ```text
-outputs/demo.png
+demo.gif
 ```
 <p align="center">
-  <img src="outputs/demo.png" alt="Vietnamese NER Demo" width="900">
+  <img src="demo.gif" alt="Vietnamese NER Demo" width="900">
 </p>
 
 ---
