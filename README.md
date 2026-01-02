@@ -117,7 +117,7 @@ CS221.Q12-Vietnamese-Named-Entity-Recognition/
 ├── Nhom4_CS221.Q12-Project_Report.pdf         # Report
 ├── app.py                         # Flask application entry point
 ├── requirements.txt               # Python dependencies
-├── CS221_Slides.pdf               # Presentation slides
+├── LICENSE          
 ├── demo.gif                   # GIF of Flask demo interface
 └── README.md                      # Project documentation
 
